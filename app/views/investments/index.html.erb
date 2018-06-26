@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Investments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Invested amount</th>
+      <th>Status</th>
+      <th>Open date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @investments.each do |investment| %>
+      <tr>
+        <td><%= investment.name %></td>
+        <td><%= investment.invested_amount %></td>
+        <td><%= investment.status %></td>
+        <td><%= investment.open_date %></td>
+        <td><%= investment.end_date %></td>
+        <td><%= link_to 'Show', investment %></td>
+        <td><%= link_to 'Edit', edit_investment_path(investment) %></td>
+        <td><%= link_to 'Destroy', investment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Investment', new_investment_path %>
