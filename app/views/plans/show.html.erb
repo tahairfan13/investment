@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h2 style="text-align: center;">
+  <strong>Max value:</strong>
+  <%= @plan.max_value %>
+</h2>
+
+<h2 style="text-align: center;">
+  <strong>Min value:</strong>
+  <%= @plan.min_value %>
+</h2>
+
+<h2 style="text-align: center;">
+  <strong>Title:</strong>
+  <%= @plan.title %>
+</h2>
+
+<%= link_to 'Edit', edit_plan_path(@plan) , class: "btn btn-warning" %> |
+<%= link_to 'Back', plans_path , class: "btn btn-info" %>
+</div>

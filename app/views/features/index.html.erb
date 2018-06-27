@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1 style="text-align: center;">Features</h1>
+
+<div class="container">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Plan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @features.each do |feature| %>
+      <tr>
+        <td><%= feature.title %></td>
+        <td><%= feature.plan.title %></td>
+        <td><%= link_to 'Show', feature , class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_feature_path(feature), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Feature', new_feature_path, class:"btn btn-primary" %>
+
+</div>
